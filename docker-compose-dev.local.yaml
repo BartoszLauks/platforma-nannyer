@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  platforma-nannyer-mysql:
+    container_name: platforma-nannyer-mysql-dev-local
+    ports:
+      - '33060:3306'
+  platforma-nannyer-php:
+    container_name: platforma-nannyer-php-dev-local
+    ports:
+      - '2222:22'
+    volumes:
+      - platforma-nannyer-api-vendor-sync:/app/vendor
+      - platforma-nannyer-api-app-sync:/app
+    environment:
+      APP_ENV: dev
+      APP_VERSION: dev
+      DATABASE_URL: mysql://root:@platforma-nannyer-mysql:3306/platforma-nannyer
+
+  platforma-nannyer-nginx:
+    container_name: platforma-nannyer-nginx-dev-local
+    ports:
+      - '9090:80'
+    volumes:
+      - platforma-nannyer-api-vendor-sync:/app/vendor
+      - platforma-nannyer-api-app-sync:/app
+
+volumes:
+  platforma-nannyer-api-vendor-sync:
+    external: true
+  platforma-nannyer-api-app-sync:
+    external: true

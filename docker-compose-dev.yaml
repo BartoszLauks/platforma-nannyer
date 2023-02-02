@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  platforma-nannyer-mysql:
+    container_name: platforma-nannyer-mysql-dev
+    ports:
+      - '33063:3306'
+
+  platforma-nannyer-php:
+    container_name: platforma-nannyer-php-dev
+    environment:
+      APP_ENV: dev
+      APP_VERSION: dev
+      DATABASE_URL: mysql://root:@platforma-nannyer-mysql:3306/platforma-nannyer_dev
+
+  platforma-nannyer-nginx:
+    container_name: platforma-nannyer-nginx-dev
+    ports:
+      - '8083:80'

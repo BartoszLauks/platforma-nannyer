@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block body %}
+    <br>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_home') }}">Platforma Nannyer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ path('app_info') }}">Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_kontakt') }}">Kontakt</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_cennik') }}">Cennik</a>
+        </li>
+    </ul>
+
+    <br>
+    <h1 style="text-align: center">Strona w budowie</h1>
+    <p style="text-align: center">Wychodząc naprzeciw zabieganym rodzicom, którzy potrzebują wsparcia<br>
+        w opiece nad dziećmi poniżej 15 roku życia chcemy zacząć dostarczać na rynku kompleksowe usługi niań za pośrednictwem platformy.<br>
+        Będzie ona dostępna zarówno za pośrednictwem komputera<br>
+        (strona internetowa) jak i przy użyciu telefonu komórkowego (aplikacja)<br>
+        i w łatwy sposób łączyć zweryfikowanych użytkowników platformy,<br>
+        czyli rodziców i nianie.<br>
+        Poza zwykłą opieką nad dziećmi nianie na platformie będą świadczyć dodatkowe usługi takie jak na przykład pranie, gotowanie, sprzątanie czy odrabianie lekcji.<br>
+    </p>
+{% endblock %}

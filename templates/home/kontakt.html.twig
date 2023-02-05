@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block body %}
+    <br>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_home') }}">Platforma Nannyer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_info') }}">Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ path('app_kontakt') }}">Kontakt</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_cennik') }}">Cennik</a>
+        </li>
+    </ul>
+
+    <br>
+    <h1 style="text-align: center">Strona w budowie</h1>
+    <p style="text-align: center">Jesteś zainteresowany naszymi usługami?<br>
+        Zadzwoń do Natalii - +48 900 800 700<br>
+        Napisz maila do Kingi - kinga@nannyer.czest.pl<br>
+    </p>
+{% endblock %}

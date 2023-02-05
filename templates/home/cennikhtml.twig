@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block body %}
+    <br>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_home') }}">Platforma Nannyer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_info') }}">Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_kontakt') }}">Kontakt</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ path('app_cennik') }}">Cennik</a>
+        </li>
+    </ul>
+
+    <br>
+    <h1 style="text-align: center">Strona w budowie</h1>
+    <p style="text-align: center">Korzystanie z platformy - Nianie:
+        - umowa na 2 lata:<br>
+        - 5zł/miesięcznie za posiadanie konta<br>
+        -25zł opłata aktywacyjna<br>
+        - umowa na rok:<br>
+        - 10zł/miesięcznie za posiadanie konta<br>
+        - 35zł opłata aktywacyjna<br>
+
+        Korzystanie z platformy - Rodzice:<br>
+        - umowa na 2 lata:<br>
+        - 10zł/miesięcznie za posiadanie konta<br>
+        - 25zł opłata aktywacyjna<br>
+        - umowa na rok:<br>
+        - 15zł/miesięcznie za posiadanie konta<br>
+        - 35zł opłata aktywacyjna<br>
+        dla rodzin wielodzietnych przewidziany jest rabat<br>
+    </p>
+{% endblock %}

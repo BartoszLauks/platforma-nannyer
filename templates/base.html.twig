@@ -25,14 +25,17 @@
     </head>
     <body>
         <nav id="navbar-example2" class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="{{ path('app_home') }}">Navbar</a>
+            <a class="navbar-brand" href="{{ path('app_home') }}">Platforma Nannyer</a>
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" href="#fat">@fat</a>
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                    {% else %}
+                    <a class="nav-link" href="{{ path('app_login') }}">Sign in</a>
+                <li>
+                    <a class="nav-link" href="{{ path('app_register') }}">Sign up !</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mdo">@mdo</a>
-                </li>
+                {% endif %}
 {#                <li class="nav-item dropdown">#}
 {#                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
 {#                    <div class="dropdown-menu">#}

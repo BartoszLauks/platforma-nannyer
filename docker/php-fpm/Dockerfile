@@ -1,5 +1,7 @@
 FROM php:8.2.2-fpm-alpine
 
+RUN apk add --update linux-headers
+
 RUN apk update \
  && apk add --no-cache $PHPIZE_DEPS \
     bash \
@@ -48,7 +50,9 @@ CMD crond -b && rsyslogd && php-fpm
 #RUN chmod 777 -R public/
 
 RUN wget https://get.symfony.com/cli/installer -O - | bash
-RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
 
 RUN apk add vim
 RUN alias sc="symfony console"
+
+
